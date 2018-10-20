@@ -28,8 +28,21 @@ async function login(req, res) {
     user: { username: user.username, email: user.email, token: token }
   });
 }
+async function changePassword(req, res) {
+  const userId = req.user.userid;
+  const user = await User.findById(userId);
+
+  const newUserProfile = req.body.user;
+  if (newUserProfile.password) {
+    user.setPassword(newUserProfile.password);
+  }
+
+  await user.save();
+  return res.json({ status: "done" });
+}
 
 module.exports = {
   registerNewUser,
-  login
+  login,
+  changePassword
 };
