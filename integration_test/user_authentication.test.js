@@ -23,8 +23,10 @@ describe("User authentication", () => {
     expect(response.statusCode).toBe(status.OK);
     expect(userJson).toBeDefined();
     expect(userJson.email).toEqual(email);
-    expect(userJson.token).toBeDefined();
-    expect(userJson.token).not.toBeNull();
+    const jwtTokenCookie = [expect.stringMatching(/jwt/)];
+    expect(response.headers["set-cookie"]).toEqual(
+      expect.arrayContaining(jwtTokenCookie)
+    );
   });
 
   test("Login with invalid email", async () => {

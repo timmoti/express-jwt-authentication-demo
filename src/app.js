@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express"),
   bodyParser = require("body-parser"),
+  cookieParser = require("cookie-parser"),
   cors = require("cors"),
   errorhandler = require("errorhandler"),
   status = require("http-status"),
@@ -17,6 +18,8 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser());
+
 if (process.env.NODE_ENV === "development") {
   app.use(errorhandler());
 }
