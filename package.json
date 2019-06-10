@@ -14,7 +14,7 @@
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "dotenv": "^6.1.0",
-    "errorhandler": "^1.5.0",
+    "errorhandler": "^1.5.1",
     "express": "~4.16.0",
     "express-async-wrap": "^1.0.0",
     "http-status": "^1.2.0",
