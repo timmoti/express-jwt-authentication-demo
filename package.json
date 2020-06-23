@@ -19,7 +19,7 @@
     "express-async-wrap": "^1.0.0",
     "http-status": "^1.2.0",
     "morgan": "~1.9.0",
-    "winston": "^3.1.0"
+    "winston": "^3.3.2"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
